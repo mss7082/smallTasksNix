@@ -1,0 +1,67 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.7.
+--
+-- see: https://github.com/sol/hpack
+
+name:           smallTasksNix
+version:        0.1.0.0
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_smallTasksNix
+  hs-source-dirs:
+      src
+  default-extensions:
+      InstanceSigs
+      ImportQualifiedPost
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , rio
+    , typed-process
+  default-language: Haskell2010
+
+executable smallTasksNix
+  main-is: Main.hs
+  other-modules:
+      Paths_smallTasksNix
+  hs-source-dirs:
+      bin
+  default-extensions:
+      InstanceSigs
+      ImportQualifiedPost
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , rio
+    , smallTasksNix
+    , typed-process
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_smallTasksNix
+  hs-source-dirs:
+      test
+  default-extensions:
+      InstanceSigs
+      ImportQualifiedPost
+      OverloadedStrings
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hspec
+    , rio
+    , smallTasksNix
+    , typed-process
+  default-language: Haskell2010
